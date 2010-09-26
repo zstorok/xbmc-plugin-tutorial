@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.audio.tutorial"
+       name="XBMC Plugin Tutorial"
+       version="0.0.1"
+       provider-name="Zsolt Török">
+  <requires>
+    <import addon="xbmc.python" version="1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>audio</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">This is an English summary.</summary>
+    <description lang="en">This is an English description.</description>
+  </extension>
+</addon>
