@@ -8,7 +8,6 @@ MODE_SECOND = 20
 
 # parameter keys
 PARAMETER_KEY_MODE = "mode"
-PARAMETER_KEY_NAME = "name"
 
 # menu item names
 FIRST_SUBMENU = "First Submenu"
@@ -39,8 +38,8 @@ def addDirectoryItem(name, isFolder=True, parameters={}):
 # UI builder functions
 def show_root_menu():
     ''' Show the plugin root menu. '''
-    addDirectoryItem(name=FIRST_SUBMENU, parameters={ PARAMETER_KEY_MODE: MODE_FIRST, PARAMETER_KEY_NAME: FIRST_SUBMENU }, isFolder=True)
-    addDirectoryItem(name=SECOND_SUBMENU, parameters={ PARAMETER_KEY_MODE: MODE_SECOND, PARAMETER_KEY_NAME: SECOND_SUBMENU }, isFolder=True)
+    addDirectoryItem(name=FIRST_SUBMENU, parameters={ PARAMETER_KEY_MODE: MODE_FIRST }, isFolder=True)
+    addDirectoryItem(name=SECOND_SUBMENU, parameters={ PARAMETER_KEY_MODE: MODE_SECOND }, isFolder=True)
     xbmcplugin.endOfDirectory(handle=handle, succeeded=True)
     
 def show_first_submenu():
@@ -59,10 +58,8 @@ def show_second_submenu():
 
 # parameter values
 params = parameters_string_to_dict(sys.argv[2])
-name = urllib.unquote_plus(params.get(PARAMETER_KEY_NAME, ""))
 mode = int(params.get(PARAMETER_KEY_MODE, "0"))
 print "##########################################################"
-print("Name: %s" % name)
 print("Mode: %s" % mode)
 print "##########################################################"
 
